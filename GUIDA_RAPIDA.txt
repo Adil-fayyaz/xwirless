@@ -1,0 +1,92 @@
+# X WIRELESS - Guida Rapida
+# ========================
+#
+# Creato da: Adil Fayyaz
+# Instagram: @Infinityx_20257
+#
+# SOLO PER SCOPI EDUCATIVI - USO AUTORIZZATO SOLO
+
+## Installazione
+
+1. Installa le dipendenze Python:
+   pip install click pydantic requests
+
+2. Installa il pacchetto:
+   pip install -e .
+
+## Utilizzo Base
+
+### Test in modalita sandbox (sicuro):
+python -m xwirless scan --sandbox tests/samples/sample_iwlist.txt --format json
+
+### Test in modalita dry-run (simulazione):
+python -m xwirless scan --dry-run --format md
+
+### Scansione reale (SOLO su reti autorizzate):
+python -m xwirless scan --format all --save-db
+
+### Mostra informazioni:
+python -m xwirless info
+python -m xwirless version
+
+### Gestione inventario:
+python -m xwirless inventory
+python -m xwirless diff scan_id1 scan_id2
+
+## Struttura del Progetto
+
+xwirless/
+├── xwirless/           # Modulo principale
+│   ├── cli.py         # Interfaccia CLI
+│   ├── scanner.py     # Scansione Wi-Fi
+│   ├── parser.py     # Parsing output
+│   ├── report.py     # Generazione report
+│   ├── db.py         # Database inventario
+│   ├── safety.py     # Validazione sicurezza
+│   └── utils.py      # Funzioni utility
+├── tests/             # Test suite
+├── .github/workflows/ # CI/CD
+└── README.md          # Documentazione
+
+## Caratteristiche di Sicurezza
+
+- Avviso legale obbligatorio
+- Modalita dry-run per test sicuri
+- Modalita sandbox con dati di esempio
+- Validazione target (solo localhost/rete interna)
+- Nessuna capacita offensiva (no cracking, deauth, injection)
+
+## Formati Output
+
+- JSON: Dati strutturati per analisi
+- Markdown: Report leggibili
+- CSV: Dati per fogli di calcolo
+
+## Esempi di Report
+
+I report includono:
+- Metadati (timestamp, interfaccia, versione)
+- Informazioni rete (SSID, BSSID, canale, segnale)
+- Tipo di crittografia
+- Statistiche di riepilogo
+
+## Avvertenze Legali
+
+⚠️ IMPORTANTE:
+- Solo per scopi educativi
+- Solo su reti di proprieta o con autorizzazione scritta
+- Nessun uso non autorizzato
+- Rispettare tutte le leggi applicabili
+
+## Supporto
+
+- Autore: Adil Fayyaz
+- Instagram: @Infinityx_20257
+- GitHub: https://github.com/adilfayyaz/xwirless
+
+## Licenza
+
+MIT License - Vedere file LICENSE per dettagli.
+
+---
+Ricorda: Usa responsabilmente e solo su reti autorizzate!
